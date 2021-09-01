@@ -66,7 +66,10 @@ const editConditionEventListeners = () => fleet.forEach((vehicle) => editConditi
 
 const editPriceListener = (vehicle) => {
     const priceButton = document.getElementById(`${vehicle.id}-change-price-button`)
-    priceButton.addEventListener("click", () => vehicle.changePrice() + generateSummary())
+    priceButton.addEventListener("click", () => {
+        vehicle.changePrice()
+        generateSummary()
+    })
 }
 
 const editConditionListener = (vehicle) => {
@@ -109,6 +112,8 @@ const addVehicleProcess = () => {
     if (errors.length > 0) {
         addInputsValidation(errors)
     } else {
+        removeInputsValidation()
+
         const newVehicle = new Vehicle(...data)
         fleet = [newVehicle, ...fleet]
 
@@ -120,8 +125,8 @@ const addVehicleProcess = () => {
         editPriceListener(newVehicle)
         editConditionListener(newVehicle)
         deleteEventListener(newVehicle)
+        newVehicle.assignDefaultInputValue()
         setDefaultInputsValue()
-        removeInputsValidation()
     }
 }
 
