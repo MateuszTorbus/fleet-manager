@@ -103,28 +103,41 @@ const deleteEventListener = (vehicle) => {
     })
 }
 
+const addVehicleProcess = () => {
+    const { errors, data } = validateFulfilledData()
+
+    if (errors.length > 0) {
+        addInputsValidation(errors)
+    } else {
+        const newVehicle = new Vehicle(...data)
+        fleet = [newVehicle, ...fleet]
+
+        const rowElement = document.getElementById("main-content").querySelector("div.row")
+        rowElement.insertAdjacentHTML("afterbegin", newVehicle.generateItem())
+
+        generateSummary()
+        editMenuListener(newVehicle)
+        editPriceListener(newVehicle)
+        editConditionListener(newVehicle)
+        deleteEventListener(newVehicle)
+        setDefaultInputsValue()
+        removeInputsValidation()
+    }
+}
+
 const addNewVehicleListener = () => {
     const addButton = document.getElementById("add-vehicle-button")
-    addButton.addEventListener("click", () => {
-        const { errors, data } = validateFulfilledData()
+    addButton.addEventListener("click", (event) => {
+        event.preventDefault()
+        addVehicleProcess()
+    })
+}
 
-        if (errors.length > 0) {
-            addInputsValidation(errors)
-        } else {
-            const newVehicle = new Vehicle(...data)
-            fleet = [newVehicle, ...fleet]
-
-            const rowElement = document.getElementById("main-content").querySelector("div.row")
-            rowElement.insertAdjacentHTML('afterbegin', newVehicle.generateItem())
-
-            generateSummary()
-            editMenuListener(newVehicle)
-            editPriceListener(newVehicle)
-            editConditionListener(newVehicle)
-            deleteEventListener(newVehicle)
-            setDefaultInputsValue()
-            removeInputsValidation()
-        }
+const formSubmitListener = () => {
+    const formEl = document.getElementById("add-form")
+    formEl.addEventListener("submit", (event) => {
+        event.preventDefault()
+        addVehicleProcess()
     })
 }
 
@@ -137,4 +150,5 @@ export const refreshView = () => {
     editPriceEventListeners()
     editConditionEventListeners()
     addNewVehicleListener()
+    formSubmitListener()
 }

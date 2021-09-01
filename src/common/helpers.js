@@ -1,15 +1,15 @@
 export const vehicleConditions = [
     {
-        key: 'Used',
-        label: 'Used'
+        key: "Used",
+        label: "Used"
     },
     {
-        key: 'New',
-        label: 'New'
+        key: "New",
+        label: "New"
     },
     {
-        key: 'Wrecked',
-        label: 'Wrecked'
+        key: "Wrecked",
+        label: "Wrecked"
     }
 ]
 
@@ -23,18 +23,18 @@ export const removeInputsValidation = () => {
 }
 
 export const setDefaultInputsValue = () => {
-    const newVehicleType = document.getElementById('type-select')
-    const newVehicleCondition = document.getElementById('condition-select')
+    const newVehicleType = document.getElementById("type-select")
+    const newVehicleCondition = document.getElementById("condition-select")
 
     const inputs = [
-        document.getElementById('brand-input'),
-        document.getElementById('model-input'),
-        document.getElementById('course-input'),
-        document.getElementById('price-input')
+        document.getElementById("brand-input"),
+        document.getElementById("model-input"),
+        document.getElementById("course-input"),
+        document.getElementById("price-input")
     ]
 
-    inputs.forEach((input) => input.value = '')
+    inputs.forEach((input) => input.value = "")
 
-    newVehicleType.value = 'Truck'
-    newVehicleCondition.value = 'New'
+    newVehicleType.value = "Truck"
+    newVehicleCondition.value = "New"
 }
