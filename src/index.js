@@ -15,3 +15,5 @@ refreshView()
 
 // There is implemented easy and simple validation (src/common/helpers) during adding new vehicle process.
 // Please implement mechanism to style inputs during that process - for example use borders classes from bootstrap
+
+// Please in settings container for each Vehicle, in condition-select – make one of option as selected – depending on selected type.
