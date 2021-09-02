@@ -17,3 +17,16 @@ refreshView()
 // Please implement mechanism to style inputs during that process - for example use borders classes from bootstrap
 
 // Please in settings container for each Vehicle, in condition-select – make one of option as selected – depending on selected type.
+
+// Addidtional Tasks for volunteers:
+
+// Please add sort buttons with options:
+// Sort Direction - ascending || descending
+// Sort key - which property should be used to sort fleet
+
+// Please add input and implement filtering fleet feature. Filter can use Vehicle.brand and Vehicle.model properties to check
+
+// Please add possibility to change position of Vehicle:
+// to move some vehicle as 1st position
+// to move some vehicle as last position
+// to move some vehicle in structure one place upper/higher
