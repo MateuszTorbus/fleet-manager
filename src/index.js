@@ -30,3 +30,8 @@ refreshView()
 // to move some vehicle as 1st position
 // to move some vehicle as last position
 // to move some vehicle in structure one place upper/higher
+
+// For UI elements You can simply use Bootstrap 5 library, which is included in project
+// https://getbootstrap.com/docs/5.1/getting-started/introduction/
+
+// You can put new row below Summary Container and place every item inside new row.
